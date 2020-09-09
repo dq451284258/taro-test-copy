@@ -1,4 +1,5 @@
-
+const path = require("path")
+// console.log(path.resolve(`./src/ext.json`))
 const config = {
   projectName: 'mytestapp',
   date: '2020-9-8',
@@ -15,10 +16,8 @@ const config = {
   },
   copy: {
     patterns: [
-      { from: 'src/ext.json', to: 'dist/ext.json' }
-    ],
-    options: {
-    }
+      { from: path.resolve(`./src/ext.json`), to: path.resolve(`./dist/ext.json`) }
+    ]
   },
   framework: 'vue',
   mini: {
@@ -60,7 +59,18 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
+    },
+    // webpackChain(chain, webpack) {
+    //   chain.merge({
+    //     plugins: [
+    //       new CopyPlugin({
+    //         patterns: [
+    //           { from: path.resolve(`./${sourceRoot}/ext.json`), to: path.resolve(`./${outputRoot}/ext.json`) }
+    //         ]
+    //       })
+    //     ]
+    //   })
+    // }
   }
 }
 
