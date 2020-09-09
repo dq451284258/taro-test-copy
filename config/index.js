@@ -15,7 +15,7 @@ const config = {
   },
   copy: {
     patterns: [
-      { from: 'src/ext.json', to: 'dist/js/ext.json' }
+      { from: 'src/ext.json', to: 'dist/ext.json' }
     ],
     options: {
     }
